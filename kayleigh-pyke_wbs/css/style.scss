@@ -1,0 +1,483 @@
+// Overall------------------------------------------
+
+$green-1: #588b58;
+$green-2: #1c2b1c;
+$purple-1: #8c5495;
+$purple-2: #250524;
+
+@mixin title($title: FormTitle) {
+    color: $purple-2;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+@mixin theme($theme: DropShadow){
+    box-shadow: 0px 6px 6px rgb(0 0 0 / 0.075);
+}
+
+@mixin form($form: FormBox){
+    margin-top: 0.5em;
+    padding-left: 0.5em;
+    height: 2em;
+    border: none;
+    color:#777777;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lists {
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
+
+.ordered {
+    padding-left: 1.5em;
+    list-style-type: decimal;
+}
+
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.nav-bar {
+    width: 100vw;
+    background-color: $green-1;
+    position: fixed;
+    z-index: 100;
+    @include theme($theme: DropShadow);
+
+    .nav-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        height: 4em;
+        margin-left: 2em;
+    }
+    
+    .nav-item {
+        width: 90vw;
+        margin: 1em;
+        margin-right: 2em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .nav-a {
+            margin-left: 1.5em;
+            font-weight: 400;
+            font-size: 1em;
+        }
+        
+        .nav-a:hover {
+            color: $purple-1;
+        }
+
+        .default {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .highlight {
+            text-decoration: underline;
+            color: white;
+        }
+    }
+    
+    
+    
+    
+}
+
+footer {
+    padding: 1em 8em;
+    margin-top: 1em;
+    background-color: $purple-1;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: $green-1;
+    }
+
+    .footer-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .footer-text {
+        color: #fff;
+        font-size: 1em;
+        font-weight: 400;
+    }
+    
+    .footer-socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .social-image {
+            width: 2em;
+            margin: 0 0.5em;
+            height: 50px;
+            width: auto;
+        }
+    }
+    
+    
+}
+
+
+// Headers & Text ------------------------------------------
+
+.header {
+    padding: 0em 8em;
+    padding-top: 2em;
+
+    .line {
+        background: $purple-1;
+        position:relative;
+        margin-top:-17px;
+        height:5px;
+        z-index: -1;
+    
+    }
+}
+
+h1 {
+    color: $green-2;
+    font-weight: 700;
+    font-size: 2.5em;
+
+    span {
+        background: white;
+        padding-right: 0.25em;
+    }
+}
+
+h2 {
+    color: $green-1;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+}
+
+h3 {
+    color: $purple-2;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+h4 {
+    color: $purple-1;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+h5 {
+    @include title($title: FormTitle);
+    padding-bottom: 0.5em;
+}
+
+h6 {
+    color: $green-1;
+    font-style: italic;
+}
+
+// Home page ------------------------------------------
+
+.banner {
+    width: 100%;
+}
+
+.about {
+    padding: 1em 8em;
+}
+
+.join-button {
+    cursor: pointer;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: $green-1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.25em;
+    width: 3em;
+    text-align: center;
+}
+
+.join-button:hover {
+    background-color: $purple-1; 
+}
+
+.newsletters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 2em;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+
+        .pdf {
+            color: $green-1;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 1.2em;
+            padding: 0.25em 0;
+        }
+
+        .pdf:hover {
+            color: $purple-1;
+        }
+   }
+   
+}
+
+
+// Join/Memberships ------------------------------------------
+
+.link {
+    font-weight: 600;
+    color: $green-1;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color:$purple-1
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: $green-1;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #eee;
+    @include theme($theme: DropShadow);
+}
+  
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+  
+.checkbox input:checked ~ .checkmark {
+    background-color: $purple-1;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.checkbox .checkmark:after {
+    top: 0.25em;
+    left: 0.28em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: white;
+}
+
+.member-left {
+    width: 50%;
+}
+
+.member-right {
+    width: 50%;
+}
+
+.agreement {
+    margin: 1em 12em;
+    font-size: 0.75em;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+// Meetings ------------------------------------------
+
+.meetings {
+    padding: 1em 8em;
+}
+
+.spacing {
+    padding-top: 0.5em;
+}
+
+li {
+    padding-top: 0.25em;
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+}
+
+.zoom-button {
+    cursor: pointer;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: $green-1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.25em;
+    width: 6em;
+    text-align: center;
+}
+
+.zoom-button:hover {
+    background-color: $purple-1; 
+}
+
+// Field Trips ------------------------------------------
+
+.gear {
+    padding: 1em 8em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.gear-button {
+    cursor: pointer;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: $green-1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.25em;
+    width: 5em;
+    text-align: center;
+}
+
+.gear-button:hover {
+    background-color: $purple-1; 
+}
+
+.inline {
+    display:inline;
+}
+
+.top-pad {
+    padding-top: 0.5em;
+}
+
+
+// Contact Page ------------------------------------------
+
+.form-background {
+    margin: 1em 8em;
+    padding: 2em 2em;
+    background-color: #ead6ee;
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px rgb(0 0 0 / 0.25);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.left {
+    width: 60%;
+}
+
+.right {
+    width: 40%
+}
+
+.contact-title {
+    @include title($title: FormTitle);
+}
+
+.small-box {
+    width: 90%;
+    @include form($form: FormBox);
+    @include theme($theme: DropShadow);
+}
+
+.long-box {
+    width: 98%;
+    @include form($form: FormBox);
+    @include theme($theme: DropShadow);
+}
+
+.big-box {
+    margin-top: 0.5em;
+    width: 90%;
+    height: 7em;
+    border: none;
+    @include theme($theme: DropShadow);
+}
+
+.submit {
+    cursor: pointer;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: $green-1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.25em;
+}
+
+.submit:hover {
+    background-color: $purple-1;
+    
+}
+
+
+
